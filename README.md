@@ -16,6 +16,7 @@
 ```
 
 #### undertow
+[spring-boot-2-practice-using-undercow-instead-of-tomcat-as-a-web-container](https://developpaper.com/spring-boot-2-practice-using-undercow-instead-of-tomcat-as-a-web-container/)
 ```shell
 #Set the number of IO threads, which mainly perform non blocking tasks. They are responsible for multiple connections. By default, one thread per CPU core is set
 #Do not set too large. If it is too large, the startup project will report an error: too many open files
@@ -33,3 +34,11 @@ server:
 #Allocated direct memory (NiO allocated out of heap memory)
      direct-buffers: true
 ```
+
+
+In the latest version of Spring boot/Undertow, the properties to override are as follows :
+```
+server.undertow.threads.io=50
+server.undertow.threads.worker=50
+```
+
